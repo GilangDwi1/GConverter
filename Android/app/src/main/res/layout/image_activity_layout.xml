@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Latar Belakang Lingkaran -->
+    <View
+        android:id="@+id/circleBg1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_circle"
+        android:layout_marginEnd="-150dp"
+        android:layout_marginBottom="-150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/circleBg2"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_circle"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Image Converter"
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Container Menu menggunakan Flow Helper agar rapi otomatis -->
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:constraint_referenced_ids="cardJPGtoPNG,cardJPGtoWebp,cardPNGtoJPG,cardPNGtoWebp,cardWebptoPNG,cardWebptoJPG"
+        app:flow_horizontalGap="20dp"
+        app:flow_maxElementsWrap="2"
+        app:flow_verticalGap="20dp"
+        app:flow_wrapMode="aligned"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <!-- Card 1: JPG to PNG -->
+    <LinearLayout
+        android:id="@+id/cardJPGtoPNG"
+        style="@style/MenuCardStyle">
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_png" />
+        <TextView style="@style/MenuTextStyle" android:text="JPG to PNG" />
+    </LinearLayout>
+
+    <!-- Card 2: JPG to Webp -->
+    <LinearLayout
+        android:id="@+id/cardJPGtoWebp"
+        style="@style/MenuCardStyle">
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_webp" />
+        <TextView style="@style/MenuTextStyle" android:text="JPG to Webp" />
+    </LinearLayout>
+
+    <!-- Card 3: PNG to JPG -->
+    <LinearLayout
+        android:id="@+id/cardPNGtoJPG"
+        style="@style/MenuCardStyle">
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_jpg" />
+        <TextView style="@style/MenuTextStyle" android:text="PNG to JPG" />
+    </LinearLayout>
+
+    <!-- Card 4: PNG to Webp -->
+    <LinearLayout
+        android:id="@+id/cardPNGtoWebp"
+        style="@style/MenuCardStyle">
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_webp" />
+        <TextView style="@style/MenuTextStyle" android:text="PNG to Webp" />
+    </LinearLayout>
+
+    <!-- Card 5: Webp to PNG -->
+    <LinearLayout
+        android:id="@+id/cardWebptoPNG"
+        style="@style/MenuCardStyle">
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_png" />
+        <TextView style="@style/MenuTextStyle" android:text="Webp to PNG" />
+    </LinearLayout>
+
+    <!-- Card 6: Webp to JPG -->
+    <LinearLayout
+        android:id="@+id/cardWebptoJPG"
+        style="@style/MenuCardStyle">
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_jpg" />
+        <TextView style="@style/MenuTextStyle" android:text="Webp to JPG" />
+    </LinearLayout>
+
+    <!-- Bottom Bar -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/menu_icon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Menu" android:textSize="12sp" />
+        </LinearLayout>
+
+        <View android:layout_width="60dp" android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/history_icon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="History" android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Floating Button -->
+    <ImageView
+        android:id="@+id/floatingScan"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/menu_circle"
+        android:elevation="12dp"
+        android:padding="20dp"
+        android:src="@drawable/scan_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

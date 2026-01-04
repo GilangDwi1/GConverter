@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Latar Belakang Lingkaran -->
+    <View
+        android:id="@+id/circleBg1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_circle"
+        android:layout_marginEnd="-150dp"
+        android:layout_marginBottom="-150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/circleBg2"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_circle"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- JUDUL -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Audio Converter"
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- FLOW HELPER: Mengatur Grid Otomatis -->
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowAudioMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:constraint_referenced_ids="cardMP3toWAV,cardWAVtoMP3"
+        app:flow_horizontalGap="20dp"
+        app:flow_maxElementsWrap="2"
+        app:flow_verticalGap="20dp"
+        app:flow_wrapMode="aligned"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <!-- KARTU MENU -->
+    <!-- Card 1: MP3 to WAV -->
+    <LinearLayout
+        android:id="@+id/cardMP3toWAV"
+        style="@style/MenuCardStyle"
+        android:clickable="true"
+        android:focusable="true"
+        >
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_wav" />
+        <TextView style="@style/MenuTextStyle" android:text="MP3 to WAV" />
+    </LinearLayout>
+
+    <!-- Card 2: WAV to MP3 -->
+    <LinearLayout
+        android:id="@+id/cardWAVtoMP3"
+        style="@style/MenuCardStyle"
+        android:clickable="true"
+        android:focusable="true"
+        >
+        <ImageView style="@style/MenuIconStyle" android:src="@drawable/ic_mp3" />
+        <TextView style="@style/MenuTextStyle" android:text="WAV to MP3" />
+    </LinearLayout>
+
+    <!-- BOTTOM BAR -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/menu_icon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Menu" android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Spacer untuk Floating Button -->
+        <View android:layout_width="60dp" android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/history_icon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="History" android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FLOATING SCAN BUTTON -->
+    <ImageView
+        android:id="@+id/floatingScan"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/menu_circle"
+        android:elevation="12dp"
+        android:padding="20dp"
+        android:src="@drawable/scan_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

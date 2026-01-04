@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <View
+        android:id="@+id/circleBg1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="-150dp"
+        android:layout_marginBottom="-150dp"/>
+
+    <View
+        android:id="@+id/circleBg2"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-150dp"/>
+
+
+
+    <!-- TITLE -->
+
+    <!-- GRID CONTAINER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- FILE -->
+        <LinearLayout
+            android:id="@+id/cardFile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/convert_file_button"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@id/cardVideo"
+            app:layout_constraintEnd_toStartOf="@id/cardImage"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/export_file"
+                android:src="@drawable/file_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textFile1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="FILE"
+            android:textColor="#000"
+            android:textSize="16sp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/cardFile"
+            app:layout_constraintStart_toStartOf="@id/cardFile"
+            app:layout_constraintTop_toBottomOf="@id/cardFile" />
+
+        <TextView
+            android:id="@+id/textFile2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="PDF, Word, Xlsx"
+            android:textColor="#666"
+
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/textFile1"
+            app:layout_constraintStart_toStartOf="@id/textFile1"
+            app:layout_constraintTop_toBottomOf="@id/textFile1" />
+
+        <!-- IMAGE -->
+        <LinearLayout
+            android:id="@+id/cardImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/convert_file_button"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@id/cardAudio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cardFile"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/export_file"
+                android:src="@drawable/image_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textImage1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="IMAGE"
+            android:textColor="#000"
+            android:textSize="16sp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/cardImage"
+            app:layout_constraintStart_toStartOf="@id/cardImage"
+            app:layout_constraintTop_toBottomOf="@id/cardImage" />
+
+        <TextView
+            android:id="@+id/textImage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="PNG, JPG, Webp"
+            android:textColor="#666"
+
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/textImage1"
+            app:layout_constraintStart_toStartOf="@id/textImage1"
+            app:layout_constraintTop_toBottomOf="@id/textImage1" />
+
+
+        <!-- VIDEO -->
+        <LinearLayout
+            android:id="@+id/cardVideo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/convert_file_button"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardAudio"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardFile"
+            app:layout_constraintVertical_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/export_file"
+                android:src="@drawable/video_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textVideo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="VIDEO"
+            android:textColor="#000"
+            android:textSize="16sp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/cardVideo"
+            app:layout_constraintStart_toStartOf="@id/cardVideo"
+            app:layout_constraintTop_toBottomOf="@id/cardVideo" />
+
+        <TextView
+            android:id="@+id/textVideo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="MP3, MP4, Commpress"
+            android:textColor="#666"
+
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/textVideo1"
+            app:layout_constraintStart_toStartOf="@+id/textVideo1"
+            app:layout_constraintTop_toBottomOf="@+id/textVideo1" />
+
+        <!-- AUDIO -->
+        <LinearLayout
+            android:id="@+id/cardAudio"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/convert_file_button"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cardVideo"
+            app:layout_constraintTop_toBottomOf="@id/cardImage"
+            app:layout_constraintVertical_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/export_file"
+                android:src="@drawable/audio_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAudio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="AUDIO"
+            android:textColor="#000"
+            android:textSize="16sp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/cardAudio"
+            app:layout_constraintStart_toStartOf="@id/cardAudio"
+            app:layout_constraintTop_toBottomOf="@id/cardAudio" />
+
+        <TextView
+            android:id="@+id/textAudio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="MP3, WAV"
+            android:textColor="#666"
+
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/textAudio1"
+            app:layout_constraintStart_toStartOf="@+id/textAudio1"
+            app:layout_constraintTop_toBottomOf="@+id/textAudio1" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G-Converter"
+            android:textColor="#000"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.044" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- BOTTOM BAR -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#EEEEEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Menu -->
+        <LinearLayout
+            android:id="@+id/cardUser"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_user" />
+
+            <TextView
+                android:text="Menu"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+
+        <!-- History -->
+
+        <LinearLayout
+            android:id="@+id/cardHistory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/history_icon" />
+
+            <TextView
+                android:text="History"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/floatingScan"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/menu_circle"
+        android:src="@drawable/scan_icon"
+        android:padding="15dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="-50dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
